@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Routers from './router'
+// import Routers from './router'
 import histroy from './history'
 
-// window.AppHistory = histroy
+window.AppHistory = histroy
 
 class App extends React.Component {
   render() {
