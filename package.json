@@ -76,6 +76,6 @@
     "simditor": "^2.3.19"
   },
   "lint-staged": {
-    "src/": ["eslint --ext .js --ext .jsx", "git add"]
+    "src/**/*.js": ["eslint --fix", "git add"]
   }
 }
