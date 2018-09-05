@@ -22,6 +22,56 @@ http-server -p 8000 -P http://admintest.happymmall.com
 // 浏览器访问 http://127.0.0.1:8000
 // 用户名/密码 admin/admin
 ```
+
+# 开发时和build时建议都要进行eslint检查（省得要打包或提交代码时再检查）
+```
+module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        loader: 'eslint-loader',
+        exclude: /node_modules/,
+        enforce: 'pre', //在其他loader处理前，先eslint，post为之后
+        options: {
+          outputReport: {
+            filePath: 'checkstyle.xml',
+            formatter: require('eslint/lib/formatters/checkstyle')
+          },
+        },
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: '/(node_modules)/',
+        loader: 'babel-loader'
+      }
+    ]
+}
+```
+
+# git代码commit时进行eslint
+```bash
+方式一：全量检查
+1.npm i -D husky
+2.package.json配置
+"scripts": {
+  "precommit": "eslint --ext .js --ext .jsx src/"
+},
+
+方式二：增量检查，也就是只检查本次提交的代码，不管以前的
+注意：如果以前的代码里面又问题，build会失败，因此，为了保证代码质量，还是要将以前的代码fix，为了保证代码质量，建议重构，fix
+如果实在不想fix以前的代码，不让它们eslint，那么可以在有问题的代码文件顶端加上
+/* eslint-disable */，从而跳过检查
+如何去除eslint对某句js代码的检测： // eslint-disable-line
+
+1.npm i -D lint-staged
+"scripts": {
+  "precommit": "lint-staged"
+},
+"lint-staged": {
+  "src/**/*.js": ["eslint --ext .js --ext .jsx", "git add"]
+}
+```
+
 # ESLint配置表
 ```
 "no-alert": 0,//禁止使用alert confirm prompt
