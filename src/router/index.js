@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+// import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import Layout from 'layout'
 import Login from 'pages/login'
 import Routes from './router.js'

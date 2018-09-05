@@ -1,4 +1,4 @@
-// import AC from './async_load.js'
+import AC from './async_load.js'
 
 export default [
   // 首页
