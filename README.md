@@ -1,4 +1,4 @@
-# react + webpack4脚手架
+# react + webpack4 实现简单电商管理系统
 > - webpack4: code spliting
 > - react: v16.4.x
 > - mobx
@@ -23,6 +23,7 @@ http-server -p 8000 -P http://admintest.happymmall.com
 // 用户名/密码 admin/admin
 ```
 # ESLint配置表
+```
 "no-alert": 0,//禁止使用alert confirm prompt
 "no-array-constructor": 2,//禁止使用数组构造器
 "no-bitwise": 0,//禁止使用按位运算符
@@ -197,3 +198,4 @@ http-server -p 8000 -P http://admintest.happymmall.com
 "wrap-iife": [2, "inside"],//立即执行函数表达式的小括号风格
 "wrap-regex": 0,//正则表达式字面量用小括号包起来
 "yoda": [2, "never"]//禁止尤达条件
+```
