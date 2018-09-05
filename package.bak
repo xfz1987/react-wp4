@@ -5,7 +5,7 @@
   "scripts": {
     "start": "webpack-dev-server --config ./build/webpack.dev.js --mode development --open",
     "build": "rimraf dist && webpack --config ./build/webpack.prod.js --mode production",
-    "precommit": "lint-staged"
+    "precommit": "eslint --ext .js --ext .jsx src/"
   },
   "author": "xfz",
   "license": "MIT",
@@ -74,8 +74,5 @@
     "react-router-dom": "4.2.2",
     "react-topbar-progress-indicator": "^2.0.0",
     "simditor": "^2.3.19"
-  },
-  "lint-staged": {
-    "src/": ["eslint --ext .js --ext .jsx", "git add"]
   }
 }
