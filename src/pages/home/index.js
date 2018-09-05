@@ -2,7 +2,7 @@ import React from 'react'
 import { observer } from 'mobx-react'
 import { Link } from 'react-router-dom'
 import PageTitle from 'components/page-title'
-import statiStore from 'stores/statistic.js'
+// import statiStore from 'stores/statistic.js'
 import './index.scss'
 
 @observer
