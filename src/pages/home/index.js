@@ -45,6 +45,9 @@ class Home extends React.Component {
             </Link>
           </div>
         </div>
+        <img className="home-logo" src={require('../../images/black-bg.jpg')} />
+        <i className="test-icon"></i>
+        <em className="home-logo test-icon2"></em>
       </div>
     )
   }

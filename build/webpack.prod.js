@@ -43,7 +43,7 @@ const prodConfig = {
             loader: 'url-loader',
             options: {
               limit: 8192,
-              name: `${cf.images}/[name].[chunkhash:5].[ext]`,
+              name: `${cf.images}/[name].[hash:5].[ext]`,
               publicPath: cf.assetsPublicPath
             }
           }
